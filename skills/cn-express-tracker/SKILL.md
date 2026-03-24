@@ -1,5 +1,5 @@
 ---
-name: express-tracker
+name: cn-express-tracker
 description: "Query package tracking information from Chinese and international carriers using Kuaidi100 API. Supports auto-detection of carrier from tracking number. Use when user asks to track a package, check delivery status, query express/courier/logistics info, or mentions a tracking number. Triggers: 查快递, 快递查询, 物流查询, track package, tracking number, delivery status, 单号查询, express tracking, courier tracking."
 ---
 
