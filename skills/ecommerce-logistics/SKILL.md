@@ -9,11 +9,12 @@ Query order logistics from Taobao, JD.com, Pinduoduo, and Douyin with persistent
 
 ## Features
 
-- 🔗 **Multi-platform**: Taobao, JD, PDD, Douyin
+- 🔗 **Multi-platform**: Taobao, PDD (JD & Douyin not supported due to anti-bot)
 - 🔒 **Persistent login**: Cookie storage, no repeated logins
 - 🛡️ **Stealth mode**: Bypass basic anti-bot detection
 - ⏱️ **Rate limiting**: Built-in request throttling
 - 📱 **QR login**: Graceful handling of expired sessions
+- 🚚 **In-transit filter**: Only show orders currently in transit
 
 ## Setup
 
@@ -35,14 +36,10 @@ cd scripts
 # Login to Taobao (opens browser for QR scan)
 npm run query -- --platform taobao --login
 
-# Login to JD
-npm run query -- --platform jd --login
-
 # Login to PDD
 npm run query -- --platform pdd --login
 
-# Login to Douyin
-npm run query -- --platform douyin --login
+# Note: JD and Douyin are not supported due to strict anti-bot measures
 ```
 
 ### Query Logistics
@@ -53,9 +50,7 @@ npm run query -- --all
 
 # Query specific platform
 npm run query -- --platform taobao
-npm run query -- --platform jd
 npm run query -- --platform pdd
-npm run query -- --platform douyin
 
 # Query with custom data directory
 npm run query -- --all --data-dir /path/to/cookies
@@ -119,10 +114,10 @@ references/
 
 | Platform | Status | Notes |
 |----------|--------|-------|
-| Taobao | 🚧 WIP | Order list + logistics |
-| JD | 🚧 WIP | Order list + logistics |
-| PDD | 🚧 WIP | Order list + logistics |
-| Douyin | 🚧 WIP | Order list + logistics |
+| Taobao | ✅ Available | Order list + logistics info |
+| JD | ❌ Unsupported | Anti-bot detection too strict |
+| PDD | ✅ Available | Order list + tracking number + pickup code |
+| Douyin | ❌ Unsupported | Requires mobile app access |
 
 ## Implementation Notes
 
